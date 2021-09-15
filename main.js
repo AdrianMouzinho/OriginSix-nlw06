@@ -18,10 +18,10 @@ for(const item of links) {
 }
 
 /* mudar o header da página quando der scroll */
-const header = document.querySelector('#header')
-const navHeight = header.offsetHeight
-
-window.addEventListener('scroll', function() {
+function changeHeaderScroll() {
+    const header = document.querySelector('#header')
+    const navHeight = header.offsetHeight
+    
     if(this.window.scrollY >= navHeight) {
         /* maior ou igual a altura do header */
         header.classList.add('scroll')
@@ -29,9 +29,9 @@ window.addEventListener('scroll', function() {
         /* menor que a altura do header */
         header.classList.remove('scroll')
     }
-})
+}
 
-/* testimonials carrossel slide swipper */
+/* testimonials carrossel slide swipper 
 const swiper = new Swiper('.swiper-container', {
   slidesPerView: 1,
   pagination: {
@@ -39,9 +39,9 @@ const swiper = new Swiper('.swiper-container', {
   },
   mousewheel: true,
   keyboard: true
-})
+}) 
 
-/* ScrollReveal: Mostrar elementos quando ser scroll na página */
+/* ScrollReveal: Mostrar elementos quando ser scroll na página 
 const scrollReveal = ScrollReveal({
     origin: 'top',
     distance: '35px',
@@ -56,3 +56,21 @@ scrollReveal.reveal(
     #testimonials header, #testimonials .testimonial,
     #contact .text, #contact .info
     `, { interval: 100 })
+    */
+
+/* Botão voltar para o topo */
+function backToTop() {
+    const buttonBackToTop = document.querySelector('.topo')
+    if (window.scrollY >= 560) {
+        buttonBackToTop.classList.add('show')
+    }else {
+        buttonBackToTop.classList.remove('show')
+    }
+}
+
+/* When Scroll */
+
+window.addEventListener('scroll', function() {
+    changeHeaderScroll()
+    backToTop()
+})
