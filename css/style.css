@@ -1,56 +1,23 @@
-/*====  RESET ============================ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-img {
-  width: 100%;
-  height: auto;
-}
-
-/*====  VARIABLES ============================ */
-:root {
-  --header-height: 4.5rem;
-
-  /* colors */
-  --hue: 159;
-  /* HSL color mode */
-  --base-color: hsl(var(--hue) 36% 57%);
-  --base-color-second: hsl(var(--hue) 65% 88%);
-  --base-color-alt: hsl(var(--hue) 57% 53%);
-  --title-color: hsl(var(--hue) 41% 10%);
-  --text-color: hsl(0 0% 46%);
-  --text-color-light: hsl(0 0% 98%);
-  --body-color: hsl(0 0% 98%);
-
-  /* font */
-  --title-font-size: 1.875rem;
-}
-
 /*====  BASE ============================ */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font: 400 1rem 'DM Sans', sans-serif;
+  font: 400 var(--body-font-size) var(--body-font-family);
   color: var(--text-color);
   background: var(--body-color);
   -webkit-font-smoothing: antialiased;
 }
 
 .title {
-  font: 700 var(--title-font-size) 'Poppins', sans-serif;
+  font: 700 var(--h1-font-size) var(--title-font-family);
+  color: var(--title-color);
+  -webkit-font-smoothing: auto;
+}
+
+.link {
+  font: 700 var(--h2-font-size) var(--title-font-family);
   color: var(--title-color);
   -webkit-font-smoothing: auto;
 }
@@ -63,7 +30,7 @@ body {
   align-items: center;
   padding: 0 2rem;
   border-radius: 0.25rem;
-  font: 500 1rem 'DM Sans', sans-serif;
+  font: 500 1rem var(--body-font-family);
   transition: background 0.3s;
 }
 
@@ -101,11 +68,11 @@ body {
 }
 
 .section {
-  padding: 5rem 0;
+  padding: calc(5rem + var(--header-height)) 0 5rem 0;
 }
 
-.section header {
-  margin-bottom: 4rem;
+.section .subtitle {
+  font-size: var(--subtitle-font-size);
 }
 
 .section header strong {
@@ -133,13 +100,9 @@ body {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
 }
 
-main {
-  margin-top: calc(var(--header-height) + 0rem);
-}
-
 /*====  LOGO ============================ */
 .logo {
-  font: 700 1.31rem 'Poppins', sans-serif;
+  font: 700 var(--logo-font-size) var(--logo-font-family);
   color: var(--title-color);
 }
 
@@ -169,8 +132,10 @@ nav ul li a {
   position: relative;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
   color: var(--base-color);
+  font-weight: 700;
 }
 
 nav ul li a::after {
@@ -186,7 +151,8 @@ nav ul li a::after {
   transition: width 0.2s;
 }
 
-nav ul li a:hover::after {
+nav ul li a:hover::after,
+nav ul li a.active::after {
   width: 100%;
 }
 
@@ -202,7 +168,7 @@ nav .menu ul {
 }
 
 /* Mostrar menu */
-nav.show .menu{
+nav.show .menu {
   opacity: 1;
   visibility: visible;
 
@@ -241,7 +207,7 @@ nav .icon-close {
   position: absolute;
   top: -1.5rem;
   right: 1.5rem;
-  
+
   transition: 0.2s;
 }
 
@@ -253,27 +219,25 @@ nav.show .icon-close {
 
 /*====  HOME ============================ */
 #home {
+  height: 44.8125rem;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: url(../assets/images/barber.png) no-repeat right bottom;
 }
 
 #home .container {
   margin: 0;
+  transform: translateY(-25%);
 }
 
 #home .image {
-  position: relative;
-  width: 89.5%;
-}
-
-#home .image::before {
-  content: '';
-  height: 100%;
-  width: 100%;
-  background: var(--base-color-second);
   position: absolute;
-  top: -16.8%;
-  left: 16.7%;
-  z-index: 0;
+  width: 342.87px;
+  bottom: 0rem;
+  right: -1rem;
 }
 
 #home .image img {
@@ -281,15 +245,11 @@ nav.show .icon-close {
   right: 1rem;
 }
 
-#home .image img,
-#home .image::before {
-  border-radius: 0.25rem;
-}
-
 #home .text {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
-  text-align: center;
+  text-align: left;
+  position: relative;
 }
 
 #home .text h1 {
@@ -297,7 +257,8 @@ nav.show .icon-close {
 }
 
 #home .text p {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: var(--subtitle-font-size);
 }
 
 /*====  ABOUT ============================ */
@@ -390,6 +351,7 @@ nav.show .icon-close {
 #testimonials blockquote p {
   position: relative;
   text-indent: 1.75rem;
+  line-height: 26px;
   margin-bottom: 1.5rem;
   color: var(--title-color);
 }
@@ -403,6 +365,7 @@ nav.show .icon-close {
 
 #testimonials cite {
   display: flex;
+  gap: 0.5rem;
   align-items: center;
   font-style: normal;
 }
@@ -412,7 +375,6 @@ nav.show .icon-close {
   height: 2rem;
   object-fit: cover;
   clip-path: circle();
-  margin-right: 0.5rem;
 }
 
 /* swipper */
@@ -439,13 +401,13 @@ nav.show .icon-close {
 }
 
 #contact .button i,
-#contact ul li i{
-font-size: 1.5rem;
-margin-right: 0.625rem;
+#contact ul li i {
+  font-size: 1.5rem;
+  margin-right: 0.625rem;
 }
 
 #contact ul.grid {
-gap: 2rem;
+  gap: 2rem;
 }
 
 #contact ul li {
@@ -463,16 +425,20 @@ footer {
   color: var(--text-color-light);
 }
 
+footer.section {
+  padding: 4rem 0;
+}
+
 footer .logo {
-   display: inline-block;
-   margin-bottom: 1.5rem;
+  display: inline-block;
+  margin-bottom: 1.5rem;
 }
 
 footer p {
   margin-bottom: 0.75rem;
 }
 
-footer ul{
+footer ul {
   list-style: none;
   display: flex;
   gap: 2rem;
@@ -499,7 +465,7 @@ footer .social-media a:hover {
   right: 1.5rem;
   bottom: 1rem;
 
-  padding: .5rem;
+  padding: 0.5rem;
   clip-path: circle();
 
   font-size: 1.5rem;
@@ -508,7 +474,7 @@ footer .social-media a:hover {
   visibility: hidden;
   opacity: 0;
 
-  transition: .5s;
+  transition: 0.5s;
   transform: translateY(100%);
 }
 
@@ -516,15 +482,4 @@ footer .social-media a:hover {
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
-}
-
-/*=== FOOTER ======================*/
-@media (min-width: 992px){
-  :root{
-    --title-font-size: 2.2rem;
-  }
-
-  #home .image {
-    margin-top: 2rem;
-  }
 }

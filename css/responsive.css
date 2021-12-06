@@ -1,0 +1,162 @@
+/*=== MEDIAS QUERIES ======================*/
+
+/* medium devices: 992 > */
+@media (min-width: 992px) {
+  :root {
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.125rem;
+  }
+
+}
+
+/* large devices: 1024 > */
+@media (min-width: 1024px) {
+  body {
+    font-size: calc(var(--body-font-size) + 0.125rem);
+  }
+
+  .container {
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section {
+    padding: 10rem 0;
+  }
+
+  .section header,
+  #testimonials header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button {
+    height: 3.125rem;
+  }
+
+  .logo {
+    font: 700 calc(var(--logo-font-size) + 0.25rem) var(--logo-font-family);
+  }
+
+  .title {
+    font-size: calc(var(--h1-font-size) + 0.5rem);
+  }
+
+  /* navigation */
+  nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+
+  nav .menu ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav .menu ul li a.link {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  nav .toogle {
+    display: none;
+  }
+
+  /* home */
+  #home {
+    height: 100vh;
+    background: url(../assets/images/barber-medium.png) no-repeat right bottom;
+  }
+
+  #home .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  #home .image {
+    order: 1;
+  }
+
+  #home .text {
+    order: 0;
+    margin: 0;
+    max-width: 24rem;
+    text-align: left;
+  }
+
+  /* about */
+  #about .container {
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  #about .grid {
+    grid-template-columns: 4fr 5fr;
+  }
+
+  #about .image {
+    margin-left: 0;
+  }
+
+  /* services */
+  #services .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #services .card {
+    padding: 4rem 2rem;
+  }
+
+  /* testimonials */
+  #testimonials .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* testimonials */
+  #contact > .grid {
+    grid-auto-flow: column;
+    align-items: center;
+  }
+
+  #contact .text {
+    max-width: 25rem;
+  }
+
+  /* footer */
+  footer.section {
+    padding: 3.75rem 0;
+  }
+
+  footer > .grid {
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer .logo {
+    font-size: 2.375rem;
+  }
+
+  /* layout */
+  main {
+    margin-top: calc(var(--header-height));
+  }
+}
+
+/* extra large devices: 1200 > */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 73.25rem;
+  }
+
+  #home {
+    background: url(../assets/images/barber-big.png) no-repeat right bottom;
+  }
+}

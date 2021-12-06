@@ -1,0 +1,47 @@
+/*====  RESET ============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/*====  VARIABLES ============================ */
+:root {
+  --header-height: 4.5rem;
+
+  /* colors */
+  --hue: 36;
+  /* HSL color mode */
+  --base-color: hsl(var(--hue) 100% 57%);
+  --base-color-second: hsl(var(--hue) 94% 79%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 46%);
+  --text-color-light: hsl(0 0% 98%);
+  --body-color: hsl(0 0% 98%);
+
+  /* font */
+  --h1-font-size: 1.75rem;
+  --h2-font-size: 1.5rem;
+  --subtitle-font-size: 1.125rem;
+  --logo-font-size: 1.25rem;
+  --body-font-size: 1rem;
+  --body-2-font-size: 1.125rem;
+
+  --title-font-family: 'Chivo', sans-serif;
+  --logo-font-family: 'Poppins', sans-serif;
+  --body-font-family: 'Source Sans Pro', sans-serif;
+}
