@@ -14,7 +14,7 @@
 <br>
 
 <p align="center">
-  <img alt="OriginSix" src=".github/preview.png" width="100%">
+  <img alt="OriginSix" src="assets/images/Capa.png" width="100%">
 </p>
 
 ## 🚀 Tecnologias
@@ -38,8 +38,10 @@ Utilitários
 
 ## 💻 Projeto
 
-OriginSix é uma página institucional no formato One Page, responsiva, para usar em diversos tipos de micro, pequena e média empresas. Contém as seguintes seções: Header, Navigation, Home, Sobre, Serviços, Depoimentos, Contato e Footer
-<a href="https://adrianmouzinho.github.io/origin-nlw06/#about">Ver site</a>
+OriginSix é uma página institucional no formato One Page, responsiva, para usar em diversos tipos de micro, pequena e média empresas. Contém as seguintes seções: Header, Navigation, Home, Sobre, Serviços, Depoimentos, Contato e Footer.
+<p align="left">
+  <a href="https://adrianmouzinho.github.io/origin-nlw06/#about">Ver site</a>
+</p>
 
 ## 🔖 Layout
 
@@ -51,4 +53,4 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](.github/LICENSE.
 
 ---
 
-Feito com ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://discordapp.com/invite/gCRAFhc)
+Feito com ♥ by Adrian Mouzinho
